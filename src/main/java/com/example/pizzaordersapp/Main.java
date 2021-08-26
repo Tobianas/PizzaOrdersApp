@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main extends Application {
     @Override
@@ -21,7 +23,6 @@ public class Main extends Application {
 
     }
 
-    public static void main(String[] args) {
-        launch();
+    public static void main(String[] args) {launch();
     }
 }

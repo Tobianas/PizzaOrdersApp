@@ -1,15 +1,17 @@
 package com.example.pizzaordersapp;
 
+import javafx.scene.control.Alert;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
 
-    public static Connection getConnection() throws Exception {
+    public static Connection getConnection() {
         try {
-            String url = "jdbc:mysql://localhost:3306/jdbc_pizza";
-            String username = "root";
-            String password = "";
+            final String url = "jdbc:mysql://localhost:3306/jdbc_pizza";
+            final String username = "root";
+            final String password = "";
             Class.forName("com.mysql.jdbc.Driver");
 
             Connection conn = DriverManager.getConnection(url, username, password);
@@ -17,6 +19,9 @@ public class DBConnection {
             return conn;
 
         } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error connecting to database");
+            alert.setContentText(e.toString());
             System.out.println(e);
         }
         return null;
