@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class DBSellectValues {
 
 
-    public static ArrayList<PizzaClass> Test() {
+    public static ArrayList<PizzaClass> getValues() {
         {
             ArrayList<PizzaClass> array = new ArrayList<>();
             Connection con;
